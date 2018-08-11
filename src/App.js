@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
 import Score from './components/Score';
 import firebase from './firebase';
@@ -46,7 +46,7 @@ class App extends Component {
     let answers = this.state.answers;
 
     for (let answer of answers) {
-      list.push(<Score
+      list.push(<Fragment><Score
           key={answer.mobileno}
           name={answer.name}
           mobileno={answer.mobileno}
@@ -54,11 +54,12 @@ class App extends Component {
           time={answer.time}
           score={answer.score}
           final={answer.final}
-        />);
+        /><br /></Fragment>);
     }
 
     return (
       <div className="App">
+        <h2>ScoreBoard</h2>
         {list}
       </div>
     );
