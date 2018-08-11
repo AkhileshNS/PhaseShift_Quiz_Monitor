@@ -7,12 +7,7 @@ import './Score.css';
 const cssClassName = 'Score';
 
 const Score = (props) => (<div className={cssClassName}>
-        <p className={cssClassName+"p"}>Name: {props.name}</p>
-        <p className={cssClassName+"p"}>Email: {props.email}</p>
-        <p className={cssClassName+"p"}>MobileNo: {props.mobileno}</p>
-        <p className={cssClassName+"p"}>Score: {props.score}</p>
-        <p className={cssClassName+"p"}>Time: {props.time}</p>
-        <p className={cssClassName+"p"}>Final: <strong>{props.final}</strong></p>
+        {props.name + ' - ' + props.email + ' - ' + props.mobileno}<br />{'Score: ' + props.score + '\tTime: ' + props.time + '\tFinal: '}<strong><span style={{color: '#9666d3'}}>{props.final}</span></strong>
     </div>
 );
 
